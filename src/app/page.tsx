@@ -35,12 +35,21 @@ type Result = {
 };
 
 export default function Page() {
-  const [organization, setOrganization] = useState<OrganizationKey>("IT3049C-Fall25");
-  const [assignment, setAssignment] = useState<string>(() => {
-    // Ensure we have a valid assignment on first load
-    const firstAssignment = Object.keys(ORGANIZATIONS["IT3049C-Fall25"].assignments)[0];
-    return firstAssignment || "🧑‍💻 Campus Portal (JS Exercises)";
-  });
+  // Берём первый доступный ключ организации
+  const firstOrgKey = Object.keys(ORGANIZATIONS)[0] as OrganizationKey;
+  // Берём первый доступный assignment для этой организации
+  const firstAssignment =
+    Object.keys(ORGANIZATIONS[firstOrgKey].assignments)[0] ||
+    "🧑‍💻 Placeholder Assignment";
+
+  const [organization, setOrganization] = useState<OrganizationKey>(firstOrgKey);
+  const [assignment, setAssignment] = useState<string>(firstAssignment);
+  // const [organization, setOrganization] = useState<OrganizationKey>("IT3049C-Fall25");
+  // const [assignment, setAssignment] = useState<string>(() => {
+  //   // Ensure we have a valid assignment on first load
+  //   const firstAssignment = Object.keys(ORGANIZATIONS["IT3049C-Fall25"].assignments)[0];
+  //   return firstAssignment || "🧑‍💻 Campus Portal (JS Exercises)";
+  // });
   const [username, setUsername] = useState("");
   // const [permission, setPermission] = useState<"pull"|"triage"|"push"|"maintain"|"admin">("admin");
   const [permission, setPermission] = useState<"pull"|"triage"|"push">("push");
