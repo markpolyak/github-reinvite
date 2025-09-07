@@ -28,6 +28,7 @@ export const ORGANIZATIONS = {
       "🧑‍💻 ЛР4: Управление памятью": "os-task4",
       "🧑‍💻 ЛР5: Межсетевое взаимодействие между процессами": "os-task5",
     }
+  }
 } as const;
 
 export type OrganizationKey = keyof typeof ORGANIZATIONS;
