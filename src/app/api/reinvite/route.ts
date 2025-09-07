@@ -6,7 +6,8 @@ const bodySchema = z.object({
   owner: z.string().min(1),
   repo: z.string().min(1),
   username: z.string().min(1),
-  permission: z.enum(["pull", "triage", "push", "maintain", "admin"]).default("push"),
+  // permission: z.enum(["pull", "triage", "push", "maintain", "admin"]).default("push"),
+  permission: z.enum(["pull", "triage", "push"]).default("push"),
   dryRun: z.boolean().optional().default(false),
 });
 
