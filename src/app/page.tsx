@@ -7,7 +7,8 @@ interface Input {
   owner: string;
   repo: string;
   username: string;
-  permission: "pull" | "triage" | "push" | "maintain" | "admin";
+  permission: "pull" | "triage" | "push";
+  // permission: "pull" | "triage" | "push" | "maintain" | "admin";
 }
 
 interface Invitation {
@@ -41,7 +42,8 @@ export default function Page() {
     return firstAssignment || "🧑‍💻 Campus Portal (JS Exercises)";
   });
   const [username, setUsername] = useState("");
-  const [permission, setPermission] = useState<"pull"|"triage"|"push"|"maintain"|"admin">("admin");
+  // const [permission, setPermission] = useState<"pull"|"triage"|"push"|"maintain"|"admin">("admin");
+  const [permission, setPermission] = useState<"pull"|"triage"|"push">("push");
   const [dryRun, setDryRun] = useState(false);
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<Result | null>(null);
@@ -258,7 +260,8 @@ export default function Page() {
             </label>
             <select 
               value={permission} 
-              onChange={e => setPermission(e.target.value as "pull"|"triage"|"push"|"maintain"|"admin")}
+{/*               onChange={e => setPermission(e.target.value as "pull"|"triage"|"push"|"maintain"|"admin")} */}
+              onChange={e => setPermission(e.target.value as "pull"|"triage"|"push")}
               style={{
                 padding: "0.875rem 1rem",
                 border: "2px solid #e5e7eb",
@@ -275,8 +278,8 @@ export default function Page() {
               <option value="pull">📖 Pull (Read)</option>
               <option value="triage">🔍 Triage</option>
               <option value="push">✏️ Push (Write)</option>
-              <option value="maintain">🔧 Maintain</option>
-              <option value="admin">👑 Admin</option>
+{/*               <option value="maintain">🔧 Maintain</option>
+              <option value="admin">👑 Admin</option> */}
             </select>
           </div>
 
