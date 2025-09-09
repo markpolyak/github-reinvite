@@ -7,6 +7,7 @@ export const ORGANIZATIONS = {
 
       "🧑‍💻Lab: Git Started - Your Profile": "git-started-with-you-profile",
       "🧑‍💻 Campus Portal (JS Exercises)": "js-exercise-campus-portal",
+      "🧑‍💻 Game Lobby With Rock Paper Scissors": "Game-Lobby-With-Rock-Paper-Scissors"
     }
   },
   "IT2053C-Fall25": {
@@ -15,6 +16,7 @@ export const ORGANIZATIONS = {
     assignments: {
       "Env Setup Check": "env-setup-check",
       "Python Bootcamp": "python-bootcamp",
+      "Lists and Tuples": "lists-and-tuples",
     }
   }
 } as const;
