@@ -17,7 +17,7 @@ export const ORGANIZATIONS = {
     name: "ИТМО: математическая статистика, осень 2025",
     owner: "itmo-ms-2025", // GitHub organization/owner name
     assignments: {
-      "🧑‍💻 ЛР0: знакомство с Git и GitHub": "env-setup-check",
+      "🧑‍💻 ЛР0: знакомство с Git и GitHub": "ms-lab0",
       "🧑‍💻 ЛР1:": "python-bootcamp",
     }
   },
